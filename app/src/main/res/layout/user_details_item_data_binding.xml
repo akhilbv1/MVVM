@@ -2,8 +2,12 @@
 <layout>
 
     <data>
-        <variable name="sampleUsersModel" type="com.architecture.mvvm.Storage.Response.SampleUserDetailsPojo"/>
+
+        <variable
+            name="sampleUsersModel"
+            type="com.architecture.mvvm.Storage.Response.SampleUserDetailsPojo" />
     </data>
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -26,10 +30,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
+                    android:text="@{`Name:- `+sampleUsersModel.name}"
                     android:textColor="@android:color/black"
                     android:textSize="15.5sp"
-                    tools:text="Hello"
-                    android:text="@{sampleUsersModel.name}"/>
+                    tools:text="Hello" />
 
                 <View
                     android:layout_width="match_parent"
@@ -43,10 +47,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
+                    android:text="@{`UserName:- `+sampleUsersModel.username}"
                     android:textColor="@android:color/black"
                     android:textSize="15.5sp"
-                    tools:text="Hello"
-                    android:text="@{sampleUsersModel.username}"/>
+                    tools:text="Hello" />
 
                 <View
                     android:layout_width="match_parent"
@@ -59,10 +63,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
+                    android:text="@{`Email:- `+sampleUsersModel.email}"
                     android:textColor="@android:color/black"
                     android:textSize="15.5sp"
-                    tools:text="Hello"
-                    android:text="@{sampleUsersModel.email}"/>
+                    tools:text="Hello" />
 
                 <View
                     android:layout_width="match_parent"
@@ -75,10 +79,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
+                    android:text="@{`Website:- `+sampleUsersModel.website}"
                     android:textColor="@android:color/black"
                     android:textSize="15.5sp"
-                    tools:text="Hello"
-                    android:text="@{sampleUsersModel.website}"/>
+                    tools:text="Hello" />
 
 
                 <View

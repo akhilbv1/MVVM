@@ -5,9 +5,7 @@ import android.databinding.ViewDataBinding;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.android.databinding.library.baseAdapters.BR;
 import com.architecture.mvvm.R;
@@ -38,15 +36,13 @@ public class DetailsActivityAdapterDataBinding extends RecyclerView.Adapter<Deta
     @Override
     public DetailsActivityAdapterDataBinding.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         //View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.user_details_item, parent, false);
-        ViewDataBinding viewDataBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()),R.layout.user_details_item_data_binding,parent,false);
+        ViewDataBinding viewDataBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.user_details_item_data_binding, parent, false);
         return new DetailsActivityAdapterDataBinding.ViewHolder(viewDataBinding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull DetailsActivityAdapterDataBinding.ViewHolder holder, int position) {
-        ViewDataBinding viewDataBinding = holder.getmViewDataBinding();
-
-        viewDataBinding.setVariable(BR.sampleUsersModel, sampleUsersList.get(position));
+        holder.updateUi(position);
     }
 
     @Override
@@ -64,8 +60,8 @@ public class DetailsActivityAdapterDataBinding extends RecyclerView.Adapter<Deta
             mViewDataBinding.executePendingBindings();
         }
 
-        public ViewDataBinding getmViewDataBinding(){
-            return mViewDataBinding;
+        public void updateUi(int position) {
+            mViewDataBinding.setVariable(BR.sampleUsersModel, sampleUsersList.get(position));
         }
     }
 }
