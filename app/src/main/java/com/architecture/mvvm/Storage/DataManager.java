@@ -1,7 +1,5 @@
 package com.architecture.mvvm.Storage;
 
-import android.arch.lifecycle.MutableLiveData;
-
 import com.architecture.mvvm.Storage.Response.SampleUserDetailsPojo;
 
 import java.util.List;
@@ -20,14 +18,14 @@ import retrofit2.Response;
 public class DataManager {
 
 
-    RestService restService;
+    private RestService restService;
 
     @Inject
     public DataManager(RestService restService) {
         this.restService = restService;
     }
 
-    public Single<Response<List<SampleUserDetailsPojo>>> getUserDetailsObservable(){
+    public Single<Response<List<SampleUserDetailsPojo>>> getUserDetailsObservable() {
         return restService.getUserDetails();
     }
 

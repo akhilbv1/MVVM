@@ -66,9 +66,6 @@ public class AppModule {
                 Request original = chain.request();
 
                 Request request = original.newBuilder()
-                        .header("Content-Type", "application/json")
-                        .header("Accept", "application/json")
-                        .header("Accept-Language", "en-gb")
                         // .header("Authorization", getCustomAuth())
                         .method(original.method(), original.body())
                         .build();
